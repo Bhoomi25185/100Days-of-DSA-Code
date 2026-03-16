@@ -1,0 +1,30 @@
+//rotate array
+#include <stdio.h>
+
+int main() {
+    int a[100], temp[100], n, k, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter k: ");
+    scanf("%d", &k);
+
+    k = k % n;
+
+    for(i = 0; i < n; i++)
+        temp[(i + k) % n] = a[i];
+
+    for(i = 0; i < n; i++)
+        a[i] = temp[i];
+
+    printf("Rotated array:\n");
+    for(i = 0; i < n; i++)
+        printf("%d ", a[i]);
+
+    return 0;
+}
